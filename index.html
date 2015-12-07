@@ -79,25 +79,29 @@ var sortFunctions = {
 }
 
 $(document).ready(function() {
-	var sorts = {
-		"name": true,
-		"title": false,
-		"regular_pay": false,
-		"overtime_pay": false,
-		"other_pay": false,
-		"gross_pay": false
-	}
+	var currentSort = {
+		"field": "gross_pay",
+		"ascending": false
+	};
 
-	professorData = professorData.sort(sortFunctions["name"]["ascending"]);
+	professorData = professorData.sort(sortFunctions["gross_pay"]["descending"]);
+	$("[data-field='gross_pay'] img").css("display", "inline-block");
 	updateTable();
 
 	$("#professor-salaries th").click(function() {
 		var field = $(this).data("field");
-		var isAscending = sorts[field];
+		var isAscending = currentSort["ascending"];
 
-		professorData = professorData.sort(isAscending ? sortFunctions[field]["ascending"] : sortFunctions[field]["descending"]);
+		professorData = professorData.sort(isAscending ? sortFunctions[field]["descending"] : sortFunctions[field]["ascending"]);
 
-		sorts[field] = !sorts[field];
+		$("[data-field='" + currentSort.field + "'] img").hide();
+		$("[data-field='" + field + "'] img").css("display", "inline-block");
+		$("[data-field='" + field + "'] img").css("-webkit-transform", !isAscending ? "rotate(270deg)" : "rotate(90deg)")
+
+		currentSort = {
+			"field": field,
+			"ascending": !isAscending
+		};
 
 		updateTable();
 	});
@@ -135,17 +139,33 @@ function formatNumber(inputNumber) {
 #professor-salaries td:nth-child(n + 3) {
 	text-align: right;
 }
+
+#professor-salaries th {
+	position: relative;
+	text-align: center;
+	cursor: pointer;
+}
+
+#professor-salaries img {
+	position: absolute;
+	display: none;
+	width: 24px;
+	height: 24px;
+	right: 0;
+	-webkit-transform: rotate(90deg);
+}
+
 </style>
 <body>
 <table id="professor-salaries" class="striped responsive">
 	<thead>
 		<tr>
-			<th data-field="name">Name</th>
-			<th data-field="title">Title</th>
-			<th data-field="regular_pay">Regular Pay</th>
-			<th data-field="overtime_pay">Overtime Pay</th>
-			<th data-field="other_pay">Other Pay</th>
-			<th data-field="gross_pay">Gross Pay</th>
+			<th data-field="name">Name <img src="arrow.png"/></th>
+			<th data-field="title">Title <img src="arrow.png"/></th>
+			<th data-field="regular_pay">Regular Pay <img src="arrow.png"/></th>
+			<th data-field="overtime_pay">Overtime Pay <img src="arrow.png"/></th>
+			<th data-field="other_pay">Other Pay <img src="arrow.png"/></th>
+			<th data-field="gross_pay">Gross Pay <img src="arrow.png"/></th>
 		</tr>
 	</thead>
 	<tbody>
