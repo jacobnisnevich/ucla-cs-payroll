@@ -1,0 +1,554 @@
+var data = [
+  {
+    "name": "Algirdas Avizienis",
+    "title": "Emeritus Professor of Computer Science",
+    "gross_pay": "-",
+    "regular_pay": "-",
+    "overtime_pay": "-",
+    "other_pay": "-"
+  },
+  {
+    "name": "Rajive Bagrodia",
+    "title": "Emeritus Professor of Computer Science",
+    "gross_pay": "-",
+    "regular_pay": "-",
+    "overtime_pay": "-",
+    "other_pay": "-"
+  },
+  {
+    "name": "Alfonso F. Cardenas",
+    "title": "Emeritus Professor of Computer Science",
+    "gross_pay": "-",
+    "regular_pay": "-",
+    "overtime_pay": "-",
+    "other_pay": "-"
+  },
+  {
+    "name": "Jack Carlyle",
+    "title": "Emeritus Professor of Computer Science",
+    "gross_pay": "-",
+    "regular_pay": "-",
+    "overtime_pay": "-",
+    "other_pay": "-"
+  },
+  {
+    "name": "Junghoo (John) Cho",
+    "title": "Professor of Computer Science and Vice Chair of Graduate Studies",
+    "gross_pay": "114367.00",
+    "regular_pay": "114367.00",
+    "overtime_pay": "0.00",
+    "other_pay": "0.00"
+  },
+  {
+    "name": "Wesley Chu",
+    "title": "Emeritus Distinguished Professor of Computer Science",
+    "gross_pay": "7668.00",
+    "regular_pay": "7668.00",
+    "overtime_pay": "0.00",
+    "other_pay": "0.00"
+  },
+  {
+    "name": "Tyson Condie",
+    "title": "Assistant Professor of Computer Science",
+    "gross_pay": "170098.00",
+    "regular_pay": "98108.00",
+    "overtime_pay": "0.00",
+    "other_pay": "71990.00"
+  },
+  {
+    "name": "Jason (Jingsheng) Cong",
+    "title": "Professor of Computer Science",
+    "gross_pay": "318267.00",
+    "regular_pay": "209495.00",
+    "overtime_pay": "0.00",
+    "other_pay": "108772.00"
+  },
+  {
+    "name": "Adnan Darwiche",
+    "title": "Professor of Computer Science",
+    "gross_pay": "213116.00",
+    "regular_pay": "159358.00",
+    "overtime_pay": "0.00",
+    "other_pay": "53758.00"
+  },
+  {
+    "name": "Joseph Distefano III",
+    "title": "Distinguished Professor of Computer Science",
+    "gross_pay": "13257.00",
+    "regular_pay": "9803.00",
+    "overtime_pay": "0.00",
+    "other_pay": "3454.00"
+  },
+  {
+    "name": "Michael G. Dyer",
+    "title": "Professor of Computer Science",
+    "gross_pay": "112708.00",
+    "regular_pay": "112708.00",
+    "overtime_pay": "0.00",
+    "other_pay": "0.00"
+  },
+  {
+    "name": "Paul Eggert",
+    "title": "Lecturer of Computer Science",
+    "gross_pay": "129508.00",
+    "regular_pay": "129508.00",
+    "overtime_pay": "0.00",
+    "other_pay": "0.00"
+  },
+  {
+    "name": "Jason Ernst",
+    "title": "Assistant Professor of Biological Chemistry and Computer Science",
+    "gross_pay": "127417.00",
+    "regular_pay": "92537.00",
+    "overtime_pay": "0.00",
+    "other_pay": "34880.00"
+  },
+  {
+    "name": "Milos D. Ercegovac",
+    "title": "Distinguished Professor",
+    "gross_pay": "202547.00",
+    "regular_pay": "189158.00",
+    "overtime_pay": "0.00",
+    "other_pay": "13389.00"
+  },
+  {
+    "name": "Eleazar Eskin",
+    "title": "Assistant Professor of Computer Science",
+    "gross_pay": "199827.00",
+    "regular_pay": "125922.00",
+    "overtime_pay": "0.00",
+    "other_pay": "73905.00"
+  },
+  {
+    "name": "Deborah Estrin",
+    "title": "Adjunct Professor of Computer Science",
+    "gross_pay": "46689.00",
+    "regular_pay": "0.00",
+    "overtime_pay": "0.00",
+    "other_pay": "46689.00"
+  },
+  {
+    "name": "Eliezer Gafni",
+    "title": "Professor of Computer Science",
+    "gross_pay": "102750.00",
+    "regular_pay": "102750.00",
+    "overtime_pay": "0.00",
+    "other_pay": "0.00"
+  },
+  {
+    "name": "Mario Gerla",
+    "title": "Professor of Computer Science and Department Chairman",
+    "gross_pay": "239099.00",
+    "regular_pay": "182950.00",
+    "overtime_pay": "0.00",
+    "other_pay": "56149.00"
+  },
+  {
+    "name": "Sheila Greibach",
+    "title": "Emeritus Professor of Computer Science",
+    "gross_pay": "-",
+    "regular_pay": "-",
+    "overtime_pay": "-",
+    "other_pay": "-"
+  },
+  {
+    "name": "David Heckerman",
+    "title": "Adjunct Professor of Computer Science",
+    "gross_pay": "-",
+    "regular_pay": "-",
+    "overtime_pay": "-",
+    "other_pay": "-"
+  },
+  {
+    "name": "Van Jacobson",
+    "title": "Adjunct Professor of Computer Science",
+    "gross_pay": "-",
+    "regular_pay": "-",
+    "overtime_pay": "-",
+    "other_pay": "-"
+  },
+  {
+    "name": "Alan Kay",
+    "title": "Adjunct Professor of Computer Science",
+    "gross_pay": "-",
+    "regular_pay": "-",
+    "overtime_pay": "-",
+    "other_pay": "-"
+  },
+  {
+    "name": "Miryung Kim",
+    "title": "Associate Professor of Computer Science",
+    "gross_pay": "33600.00",
+    "regular_pay": "33600.00",
+    "overtime_pay": "0.00",
+    "other_pay": "0.00"
+  },
+  {
+    "name": "Leonard Kleinrock",
+    "title": "Emeritus Distinguished Professor of Computer Science",
+    "gross_pay": "16930.00",
+    "regular_pay": "16930.00",
+    "overtime_pay": "0.00",
+    "other_pay": "0.00"
+  },
+  {
+    "name": "Allen Klinger",
+    "title": "Emeritus Professor of Computer Science",
+    "gross_pay": "-",
+    "regular_pay": "-",
+    "overtime_pay": "-",
+    "other_pay": "-"
+  },
+  {
+    "name": "Eddie Kohler",
+    "title": "Adjunct Associate Professor of Computer Science",
+    "gross_pay": "-",
+    "regular_pay": "-",
+    "overtime_pay": "-",
+    "other_pay": "-"
+  },
+  {
+    "name": "Richard Korf",
+    "title": "Professor of Computer Science and Vice Chair of Undergraduate Studies",
+    "gross_pay": "151275.00",
+    "regular_pay": "151275.00",
+    "overtime_pay": "0.00",
+    "other_pay": "0.00"
+  },
+  {
+    "name": "Christopher Lee",
+    "title": "Professor of Chemistry & Biochemistry",
+    "gross_pay": "152184.00",
+    "regular_pay": "120474.00",
+    "overtime_pay": "0.00",
+    "other_pay": "31710.00"
+  },
+  {
+    "name": "Leon Levine",
+    "title": "Emeritus Senior Lecturer of Computer Science",
+    "gross_pay": "-",
+    "regular_pay": "-",
+    "overtime_pay": "-",
+    "other_pay": "-"
+  },
+  {
+    "name": "Songwu Lu",
+    "title": "Professor of Computer Science",
+    "gross_pay": "165436.00",
+    "regular_pay": "123942.00",
+    "overtime_pay": "0.00",
+    "other_pay": "41494.00"
+  },
+  {
+    "name": "Rupak Majumdar",
+    "title": "Adjunct Professor of Computer Science",
+    "gross_pay": "-",
+    "regular_pay": "-",
+    "overtime_pay": "-",
+    "other_pay": "-"
+  },
+  {
+    "name": "Lawrence P. McNamee",
+    "title": "Emeritus Professor of Computer Science",
+    "gross_pay": "-",
+    "regular_pay": "-",
+    "overtime_pay": "-",
+    "other_pay": "-"
+  },
+  {
+    "name": "Raghu Meka",
+    "title": "Assistant Professor of Computer Science",
+    "gross_pay": "9417.00",
+    "regular_pay": "9417.00",
+    "overtime_pay": "0.00",
+    "other_pay": "0.00"
+  },
+  {
+    "name": "Todd Millstein",
+    "title": "Professor of Computer Science",
+    "gross_pay": "154049.00",
+    "regular_pay": "116758.00",
+    "overtime_pay": "0.00",
+    "other_pay": "37291.00"
+  },
+  {
+    "name": "Richard R. Muntz",
+    "title": "Emeritus Distinguished Professor of Computer Science",
+    "gross_pay": "-",
+    "regular_pay": "-",
+    "overtime_pay": "-",
+    "other_pay": "-"
+  },
+  {
+    "name": "Carey Nachenberg",
+    "title": "Adjunct Professor of Computer Science",
+    "gross_pay": "-",
+    "regular_pay": "-",
+    "overtime_pay": "-",
+    "other_pay": "-"
+  },
+  {
+    "name": "Ani Nahapetian",
+    "title": "Adjunct Assistant Professor of Computer Science",
+    "gross_pay": "-",
+    "regular_pay": "-",
+    "overtime_pay": "-",
+    "other_pay": "-"
+  },
+  {
+    "name": "Stanley Osher",
+    "title": "Professor of Mathematics",
+    "gross_pay": "359600.00",
+    "regular_pay": "268533.00",
+    "overtime_pay": "0.00",
+    "other_pay": "91067.00"
+  },
+  {
+    "name": "Rafail Ostrovsky",
+    "title": "Professor of Computer Science",
+    "gross_pay": "289275.00",
+    "regular_pay": "191437.00",
+    "overtime_pay": "0.00",
+    "other_pay": "97838.00"
+  },
+  {
+    "name": "Jens Palsberg",
+    "title": "Professor of Computer Science",
+    "gross_pay": "258939.00",
+    "regular_pay": "158343.00",
+    "overtime_pay": "0.00",
+    "other_pay": "100596.00"
+  },
+  {
+    "name": "Peter S. Pao",
+    "title": "Adjunct Professor of Computer Science",
+    "gross_pay": "53765.00",
+    "regular_pay": "51515.00",
+    "overtime_pay": "0.00",
+    "other_pay": "2250.00"
+  },
+  {
+    "name": "D. Stott Parker",
+    "title": "Professor of Computer Science",
+    "gross_pay": "-",
+    "regular_pay": "-",
+    "overtime_pay": "-",
+    "other_pay": "-"
+  },
+  {
+    "name": "Giovanni Pau",
+    "title": "Adjunct Professor of Computer Science",
+    "gross_pay": "95967.00",
+    "regular_pay": "95967.00",
+    "overtime_pay": "0.00",
+    "other_pay": "0.00"
+  },
+  {
+    "name": "Judea Pearl",
+    "title": "Emeritus on recall Professor of Computer Science",
+    "gross_pay": "82345.00",
+    "regular_pay": "82345.00",
+    "overtime_pay": "0.00",
+    "other_pay": "0.00"
+  },
+  {
+    "name": "Miodrag Potkonjak",
+    "title": "Professor of Computer Science",
+    "gross_pay": "220452.00",
+    "regular_pay": "166833.00",
+    "overtime_pay": "0.00",
+    "other_pay": "53619.00"
+  },
+  {
+    "name": "Peter Reiher",
+    "title": "Adjunct Professor of Computer Science",
+    "gross_pay": "141253.00",
+    "regular_pay": "101233.00",
+    "overtime_pay": "0.00",
+    "other_pay": "40020.00"
+  },
+  {
+    "name": "Glenn Reinman",
+    "title": "Associate Professor of Computer Science",
+    "gross_pay": "157992.00",
+    "regular_pay": "112492.00",
+    "overtime_pay": "0.00",
+    "other_pay": "45500.00"
+  },
+  {
+    "name": "David A. Rennels",
+    "title": "Emeritus Associate Professor of Computer Science",
+    "gross_pay": "-",
+    "regular_pay": "-",
+    "overtime_pay": "-",
+    "other_pay": "-"
+  },
+  {
+    "name": "Amit Sahai",
+    "title": "Professor of Computer Science",
+    "gross_pay": "259875.00",
+    "regular_pay": "162164.00",
+    "overtime_pay": "0.00",
+    "other_pay": "97711.00"
+  },
+  {
+    "name": "M.Y. “Medy” Sanadidi",
+    "title": "Emeritus Professor of Computer Science",
+    "gross_pay": "-",
+    "regular_pay": "-",
+    "overtime_pay": "-",
+    "other_pay": "-"
+  },
+  {
+    "name": "Sriram Sakararaman",
+    "title": "Assistant Professor of Computer Science",
+    "gross_pay": "-",
+    "regular_pay": "-",
+    "overtime_pay": "-",
+    "other_pay": "-"
+  },
+  {
+    "name": "Majid Sarrafzadeh",
+    "title": "Distinguished Professor of Computer Science",
+    "gross_pay": "255867.00",
+    "regular_pay": "193317.00",
+    "overtime_pay": "0.00",
+    "other_pay": "62550.00"
+  },
+  {
+    "name": "Fabien Scalzo",
+    "title": "Assistant Professor in Residence",
+    "gross_pay": "64404.00",
+    "regular_pay": "64404.00",
+    "overtime_pay": "0.00",
+    "other_pay": "0.00"
+  },
+  {
+    "name": "Fei Sha",
+    "title": "Associate Professor of Computer Science",
+    "gross_pay": "-",
+    "regular_pay": "-",
+    "overtime_pay": "-",
+    "other_pay": "-"
+  },
+  {
+    "name": "Alexander Sherstov",
+    "title": "Assistant Professor",
+    "gross_pay": "-",
+    "regular_pay": "-",
+    "overtime_pay": "-",
+    "other_pay": "-"
+  },
+  {
+    "name": "David Smallberg",
+    "title": "Lecturer of Computer Science",
+    "gross_pay": "124719.00",
+    "regular_pay": "107614.00",
+    "overtime_pay": "0.00",
+    "other_pay": "17105.00"
+  },
+  {
+    "name": "Stefano Soatto",
+    "title": "Professor of Computer Science",
+    "gross_pay": "266431.00",
+    "regular_pay": "164039.00",
+    "overtime_pay": "0.00",
+    "other_pay": "102392.00"
+  },
+  {
+    "name": "Mani Srivastava",
+    "title": "Professor of Electrical Engineering",
+    "gross_pay": "266803.00",
+    "regular_pay": "165238.00",
+    "overtime_pay": "0.00",
+    "other_pay": "101565.00"
+  },
+  {
+    "name": "Ameet Talwalkar",
+    "title": "Assistant Professor of Computer Science",
+    "gross_pay": "-",
+    "regular_pay": "-",
+    "overtime_pay": "-",
+    "other_pay": "-"
+  },
+  {
+    "name": "Yuval Tamir",
+    "title": "Associate Professor of Computer Science",
+    "gross_pay": "116880.00",
+    "regular_pay": "106067.00",
+    "overtime_pay": "0.00",
+    "other_pay": "10813.00"
+  },
+  {
+    "name": "Demetri Terzopoulos",
+    "title": "Distinguished Professor and Chancellor’s Professor of Computer Science",
+    "gross_pay": "270833.00",
+    "regular_pay": "270833.00",
+    "overtime_pay": "0.00",
+    "other_pay": "0.00"
+  },
+  {
+    "name": "Jennifer Wortman Vaughan",
+    "title": "Adjunct Assistant Professor of Computer Science",
+    "gross_pay": "-",
+    "regular_pay": "-",
+    "overtime_pay": "-",
+    "other_pay": "-"
+  },
+  {
+    "name": "Guy Van den Broeck",
+    "title": "Assistant Professor of Computer Science",
+    "gross_pay": "8985.00",
+    "regular_pay": "8985.00",
+    "overtime_pay": "0.00",
+    "other_pay": "0.00"
+  },
+  {
+    "name": "Jacques Vidal",
+    "title": "Emeritus Professor of Computer Science",
+    "gross_pay": "-",
+    "regular_pay": "-",
+    "overtime_pay": "-",
+    "other_pay": "-"
+  },
+  {
+    "name": "Wei Wang",
+    "title": "Professor of Computer Science",
+    "gross_pay": "41192.00",
+    "regular_pay": "41192.00",
+    "overtime_pay": "0.00",
+    "other_pay": "0.00"
+  },
+  {
+    "name": "Alan Yuille",
+    "title": "Professor of Statistics",
+    "gross_pay": "219266.00",
+    "regular_pay": "170592.00",
+    "overtime_pay": "0.00",
+    "other_pay": "48674.00"
+  },
+  {
+    "name": "Carlo Zaniolo",
+    "title": "N.E. Friedmann Chair in Knowledge Science",
+    "gross_pay": "262090.00",
+    "regular_pay": "185195.00",
+    "overtime_pay": "0.00",
+    "other_pay": "76895.00"
+  },
+  {
+    "name": "Lixia Zhang",
+    "title": "Professor of Computer Science",
+    "gross_pay": "293455.00",
+    "regular_pay": "179905.00",
+    "overtime_pay": "0.00",
+    "other_pay": "113550.00"
+  },
+  {
+    "name": "Song Chun Zhu",
+    "title": "Professor of Statistics",
+    "gross_pay": "248492.00",
+    "regular_pay": "158460.00",
+    "overtime_pay": "0.00",
+    "other_pay": "90032.00"
+  }
+]

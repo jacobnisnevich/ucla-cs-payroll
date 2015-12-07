@@ -1,0 +1,14 @@
+{
+	year: "2014",
+	firstname: "Eleazar",
+	lastname: "Eskin",
+	location: "Los Angeles",
+	startSal: "",
+	endSal: "",
+	title: "",
+	sord: "asc",
+	page: 1,
+	rows: 20,
+	sidx: "EAW_LST_NAM",
+	nd: 1449437177748
+}
