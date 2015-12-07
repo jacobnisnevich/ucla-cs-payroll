@@ -63,5 +63,5 @@ professors.each do |professor|
 end
 
 File.open("professors_data.json", 'w') do |file| 
-  file.write(professors_data.to_json)
+  file.write("var data = " + professors_data.to_json)
 end

@@ -8,25 +8,105 @@
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/css/materialize.min.css">
 </head>
 <script>
-$(document).ready(function() {
-	// $.ajax({
-	// 	"async": false,
-	// 	"global": false,
-	// 	"url": "professors_data.json",
-	// 	"dataType": "json",
-	// 	"success": function (data) {
-	// 		data.forEach(function(professor) {
-	// 			$("#professor-salaries tbody").append("<tr><td>" + professor.name + 
-	// 				"</td><td>" + professor.title +
-	// 				"</td><td>" + professor.regular_pay +
-	// 				"</td><td>" + professor.overtime_pay +
-	// 				"</td><td>" + professor.other_pay +
-	// 				"</td><td>" + professor.gross_pay +"</td></tr>")
-	// 		});
-	// 	}
-	// });
+var professorData = data;
 
-	data.forEach(function(professor) {
+var sortFunctions = {
+	"name": {
+		"ascending": function(a, b) {
+			var aNames = a.name.toUpperCase().split(" ");
+			var bNames = b.name.toUpperCase().split(" ");
+			var aLastName = aNames[aNames.length - 1];
+			var bLastName = bNames[bNames.length - 1];
+			return (aLastName < bLastName) ? -1 : (aLastName > bLastName) ? 1 : 0;
+		}, "descending": function(a, b) {
+			var aNames = a.name.toUpperCase().split(" ");
+			var bNames = b.name.toUpperCase().split(" ");
+			var aLastName = aNames[aNames.length - 1];
+			var bLastName = bNames[bNames.length - 1];
+			return (aLastName > bLastName) ? -1 : (aLastName < bLastName) ? 1 : 0;
+		}
+	}, "title": {
+		"ascending": function(a, b) {
+			var aTitle = a.title.toUpperCase();
+			var bTitle = b.title.toUpperCase();
+			return (aTitle < bTitle) ? -1 : (aTitle > bTitle) ? 1 : 0;
+		}, "descending": function(a, b) {
+			var aTitle = a.title.toUpperCase();
+			var bTitle = b.title.toUpperCase();
+			return (aTitle > bTitle) ? -1 : (aTitle < bTitle) ? 1 : 0;
+		}
+	}, "regular_pay": {
+		"ascending": function(a, b) {
+			var aPay = a.regular_pay == "-" ? -1 : Number(a.regular_pay);
+			var bPay = b.regular_pay == "-" ? -1 : Number(b.regular_pay);
+			return (aPay < bPay) ? -1 : (aPay > bPay) ? 1 : 0;
+		}, "descending": function(a, b) {
+			var aPay = a.regular_pay == "-" ? -1 : Number(a.regular_pay);
+			var bPay = b.regular_pay == "-" ? -1 : Number(b.regular_pay);
+			return (aPay > bPay) ? -1 : (aPay < bPay) ? 1 : 0;
+		}
+	}, "overtime_pay": {
+		"ascending": function(a, b) {
+			var aPay = a.overtime_pay == "-" ? -1 : Number(a.overtime_pay);
+			var bPay = b.overtime_pay == "-" ? -1 : Number(b.overtime_pay);
+			return (aPay < bPay) ? -1 : (aPay > bPay) ? 1 : 0;
+		}, "descending": function(a, b) {
+			var aPay = a.overtime_pay == "-" ? -1 : Number(a.overtime_pay);
+			var bPay = b.overtime_pay == "-" ? -1 : Number(b.overtime_pay);
+			return (aPay > bPay) ? -1 : (aPay < bPay) ? 1 : 0;
+		}
+	}, "other_pay": {
+		"ascending": function(a, b) {
+			var aPay = a.other_pay == "-" ? -1 : Number(a.other_pay);
+			var bPay = b.other_pay == "-" ? -1 : Number(b.other_pay);
+			return (aPay < bPay) ? -1 : (aPay > bPay) ? 1 : 0;
+		}, "descending": function(a, b) {
+			var aPay = a.other_pay == "-" ? -1 : Number(a.other_pay);
+			var bPay = b.other_pay == "-" ? -1 : Number(b.other_pay);
+			return (aPay > bPay) ? -1 : (aPay < bPay) ? 1 : 0;
+		}
+	}, "gross_pay": {
+		"ascending": function(a, b) {
+			var aPay = a.gross_pay == "-" ? -1 : Number(a.gross_pay);
+			var bPay = b.gross_pay == "-" ? -1 : Number(b.gross_pay);
+			return (aPay < bPay) ? -1 : (aPay > bPay) ? 1 : 0;
+		}, "descending": function(a, b) {
+			var aPay = a.gross_pay == "-" ? -1 : Number(a.gross_pay);
+			var bPay = b.gross_pay == "-" ? -1 : Number(b.gross_pay);
+			return (aPay > bPay) ? -1 : (aPay < bPay) ? 1 : 0;
+		}
+	}
+}
+
+$(document).ready(function() {
+	var sorts = {
+		"name": true,
+		"title": false,
+		"regular_pay": false,
+		"overtime_pay": false,
+		"other_pay": false,
+		"gross_pay": false
+	}
+
+	professorData = professorData.sort(sortFunctions["name"]["ascending"]);
+	updateTable();
+
+	$("#professor-salaries th").click(function() {
+		var field = $(this).data("field");
+		var isAscending = sorts[field];
+
+		professorData = professorData.sort(isAscending ? sortFunctions[field]["ascending"] : sortFunctions[field]["descending"]);
+
+		sorts[field] = !sorts[field];
+
+		updateTable();
+	});
+});
+
+function updateTable() {
+	$("#professor-salaries tbody").empty();
+
+	professorData.forEach(function(professor) {
 		$("#professor-salaries tbody").append("<tr><td>" + professor.name + 
 			"</td><td>" + professor.title +
 			"</td><td data-value='" + professor.regular_pay + "'>" + formatNumber(professor.regular_pay) +
@@ -34,13 +114,13 @@ $(document).ready(function() {
 			"</td><td data-value='" + professor.other_pay + "'>" + formatNumber(professor.other_pay) +
 			"</td><td data-value='" + professor.gross_pay + "'><b>" + formatNumber(professor.gross_pay) +"</b></td></tr>");
 	});
-});
+}
 
 function formatNumber(inputNumber) {
 	if (inputNumber != "-") {
 		return "$" + Number(inputNumber).toFixed(2).replace(/(\d)(?=(\d{3})+\.)/g, '$1,');
 	} else {
-		return inputNumber
+		return inputNumber;
 	}
 }
 
